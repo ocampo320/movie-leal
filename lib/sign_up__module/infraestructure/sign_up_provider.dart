@@ -1,23 +1,25 @@
 import 'dart:convert';
-
-import 'package:move_app/sign_up__module/domain/movie.dart';
 import 'package:http/http.dart' as http;
 
-import '../../app/data_source/api/api_source.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+import 'package:move_app/sign_up__module/infraestructure/sign_up_services.dart';
 
-class SignUpServices extends ApiSource {
-  SignUpServices(super.baseUrl, super.client, super.connectivity);
+import '../domain/movie.dart';
+import 'movie_data.dart';
 
-  Future<Iterable<dynamic>> _getAllMovies() async {
-    Uri url =
-        Uri.parse("http://www.omdbapi.com/?s=Batman&page=2&apikey=564727fa");
+class SignUpProvider with ChangeNotifier, DiagnosticableTreeMixin {
 
-    return getApi(url, (value) {
-      print("respuesta del api" + value.toString());
-      final result = jsonDecode(value.body);
-      Iterable list = result["Search"];
-      print("------------>"+list.toString());
-      return list;
-    });
+
+
+
+
+  void getdata() async {
+    List<Movie>movie = [];
+    SignUpServices.getAllMovies().then((value) {
+      MovieData.listDataMovie=value;
+    } );
+
   }
+
 }
