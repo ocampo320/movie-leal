@@ -4,7 +4,7 @@ class Movie {
   late final String? imdbId;
   late  final String? poster;
   late final String? title;
-   late final String? year;
+  late final String? year;
 
   Movie({this.imdbId, this.title, this.poster, this.year});
 

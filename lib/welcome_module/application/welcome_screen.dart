@@ -42,7 +42,7 @@ class WelcomeScreen extends StatelessWidget {
                     title: "Sign up",
                     color: MoveColor.yellow,
                     onTap: () {
-                      welcomeProvider. getdata();
+
                     },
                   ),
                   const SizedBox(

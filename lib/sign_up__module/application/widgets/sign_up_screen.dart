@@ -74,7 +74,10 @@ class SignUpScreen extends StatelessWidget {
                           title: "Log in",
                           color: MoveColor.white,
                           onTap: () {
-                            signUpProvider.getdata();
+
+                            Navigator.of(context)
+                                .pushNamedAndRemoveUntil('/home', (route) => false);
+                            ;
                           },
                         ),
                       ],
