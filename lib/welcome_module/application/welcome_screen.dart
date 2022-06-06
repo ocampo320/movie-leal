@@ -1,11 +1,9 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:move_app/login_module/application/widgets/button_login.dart';
 import 'package:move_app/utils/colors.dart';
+import 'package:move_app/welcome_module/application/widgets/button_login.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+class WelcomeScreen extends StatelessWidget {
+  const WelcomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -32,9 +30,10 @@ class LoginScreen extends StatelessWidget {
         Column(
           children: [
             ButtonLogin(
+            
               title: "Sign up",
               color: MoveColor.yellow,
-              function: () {},
+              onTap: () {},
             ),
             const SizedBox(
               height: 20,
@@ -42,12 +41,17 @@ class LoginScreen extends StatelessWidget {
             ButtonLogin(
               title: "Log in",
               color: MoveColor.white,
-              function: () {},
+              onTap:  (){
+                Navigator.of(context).pushNamedAndRemoveUntil('/signUp', (route) => false);
+              },
             ),
             const SizedBox(
               height: 20,
             ),
-            Text('Forgot password?',style: TextStyle(color: MoveColor.white,fontSize: 20),)
+            Text(
+              'Forgot password?',
+              style: TextStyle(color: MoveColor.white, fontSize: 20),
+            )
           ],
         )
       ])),
