@@ -1,6 +1,8 @@
 
 
-import 'app_settings.dart';
+
+
+import '../app_settings.dart';
 
 class Application {
   static Application? _singleton;
