@@ -56,7 +56,7 @@ class SignUpScreen extends StatelessWidget {
                     height: 20,
                   ),
                   TexInput(
-                    label: "PassWord",
+                    label: "Password",
                     textEditingController: t,
                   ),
                   const SizedBox(
