@@ -5,6 +5,7 @@ import 'package:move_app/utils/colors.dart';
 import 'package:move_app/welcome_module/application/widgets/button_login.dart';
 import 'package:provider/provider.dart';
 
+import '../../../services/tv_show_services.dart';
 import '../../infraestructure/sign_up_provider.dart';
 
 class SignUpScreen extends StatelessWidget {
@@ -74,10 +75,10 @@ class SignUpScreen extends StatelessWidget {
                           title: "Log in",
                           color: MoveColor.white,
                           onTap: () {
-
+                            TvShowServices.getTvShow();
                             Navigator.of(context)
                                 .pushNamedAndRemoveUntil('/home', (route) => false);
-                            ;
+
                           },
                         ),
                       ],

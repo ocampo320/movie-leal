@@ -53,7 +53,7 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
            Padding(
-            padding: const EdgeInsets.only(top: 450.0),
+            padding: const EdgeInsets.only(top: 460.0),
             child: Divider(color: MoveColor.grey,endIndent: 20,indent: 20,),
           )
         ],

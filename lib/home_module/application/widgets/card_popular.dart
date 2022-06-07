@@ -22,7 +22,7 @@ class CardPopular extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Column(
               children: [
-                Image.network(image),
+                Image.network(image,scale: 2),
                 const SizedBox(
                   height: 10,
                 ),
