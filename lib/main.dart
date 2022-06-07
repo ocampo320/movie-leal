@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:move_app/main_module/welcome_module/application/welcome_screen.dart';
 import 'package:move_app/sign_up__module/application/widgets/sign_up_screen.dart';
+import 'package:move_app/sign_up__module/infraestructure/auth_input_controller.dart';
 import 'package:move_app/utils/colors.dart';
 
 import 'home_module/application/home_screen.dart';
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Movie app',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.grey,
         inputDecorationTheme: const InputDecorationTheme(
           labelStyle: TextStyle(color: Colors.black),
           hintStyle: TextStyle(
@@ -36,7 +37,13 @@ class MyApp extends StatelessWidget {
               centerTitle: true,
               actions: [
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).pushNamedAndRemoveUntil(
+                        '/signUp', (route) => false);
+                    AuthInputController.password.text='';
+                    AuthInputController.user.text='';
+
+                  },
                   icon: Icon(
                     Icons.settings,
                     color: MoveColor.grey,

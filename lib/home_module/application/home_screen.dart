@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:move_app/home_module/application/widgets/fovorite_carousel.dart';
 import 'package:move_app/home_module/application/widgets/recommended_list.dart';
+import 'package:move_app/home_module/application/widgets/title_section.dart';
 import 'package:move_app/utils/colors.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -21,30 +22,25 @@ class HomeScreen extends StatelessWidget {
                 color: Colors.black,
                 child: const FavoriteCarousel()),
           ),
-          Container(
-              child: const Positioned(
-                  left: 20,
-                  top: 20,
-                  child: Center(
-                      child: Text(
-                    "Popular",
-                    style: TextStyle(color: Colors.white, fontSize: 20),
-                  )))),
+          const TitleSection(
+            title: 'Popular',
+            left: 20,
+            top: 20,
+          ),
           Positioned(
             left: 230,
             top: 400,
             child: Row(
               children: [
-                Container(
-                    child: Center(
-                        child: Text(
+                Center(
+                    child: Text(
                   "See All",
                   style: TextStyle(
-                    color: MoveColor.yellow,
-                    fontSize: 20,
+                color: MoveColor.yellow,
+                fontSize: 20,
                   ),
-                ))),
-                SizedBox(
+                )),
+                const SizedBox(
                   width: 10,
                 ),
                 Icon(
@@ -56,15 +52,20 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 460.0),
+            padding: const EdgeInsets.only(top: 430.0),
             child: Divider(
               color: MoveColor.grey,
               endIndent: 20,
               indent: 20,
             ),
           ),
+          const TitleSection(
+            title: 'Recommendations',
+            top: 450,
+            left: 20,
+          ),
           Padding(
-            padding: const EdgeInsets.only(top: 450),
+            padding: const EdgeInsets.only(top: 480),
             child:
                 Container(color: Colors.black, child: const RecommendedList()),
           ),
