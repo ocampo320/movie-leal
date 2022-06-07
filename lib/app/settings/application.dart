@@ -1,13 +1,8 @@
-
-
-
-
 import '../app_settings.dart';
 
 class Application {
   static Application? _singleton;
- late AppSettings appSettings;
-
+  late AppSettings appSettings;
 
   factory Application() {
     _singleton ??= Application._();

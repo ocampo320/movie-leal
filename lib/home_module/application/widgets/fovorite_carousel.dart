@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:move_app/models/tv_show.dart';
-import 'package:move_app/services/movie_services.dart';
 import 'package:move_app/services/tv_show_services.dart';
 
-import '../../../models/move.dart';
-import '../../../models/tv_show_result.dart';
 import '../../../utils/colors.dart';
 import 'card_popular.dart';
 
@@ -49,15 +46,14 @@ class FavoriteCarousel extends StatelessWidget {
     );
   }
 
-  List<Widget> constructChildren(TvShow  list) {
+  List<Widget> constructChildren(TvShow list) {
     List<Widget> markets = [];
 
     for (int i = 0; i < list.results!.length; i++) {
       markets.add(CardPopular(
         title: list.results![i].name!,
-        image:'https://image.tmdb.org/t/p/w500${list.results![i].posterPath}' ,
-
-        stars:  "0",
+        image: 'https://image.tmdb.org/t/p/w500${list.results![i].posterPath}',
+        stars: "0",
       ));
       markets.add(const SizedBox(
         height: 10,

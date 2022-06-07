@@ -1,7 +1,4 @@
-
 import '../app_exception.dart';
-
-
 
 class NotInternetException extends AppException {
   NotInternetException()

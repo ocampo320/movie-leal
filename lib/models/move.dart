@@ -1,22 +1,17 @@
 class Movie {
-
-
   late final String? imdbId;
-  late  final String? poster;
+  late final String? poster;
   late final String? title;
   late final String? year;
 
   Movie({this.imdbId, this.title, this.poster, this.year});
-
-
 
   factory Movie.fromJson(Map<String, dynamic> json) {
     return Movie(
         imdbId: json["imdbID"],
         poster: json["Poster"],
         title: json["Title"],
-        year: json["Year"]
-    );
+        year: json["Year"]);
   }
 
   Map<String, dynamic> toJson() {

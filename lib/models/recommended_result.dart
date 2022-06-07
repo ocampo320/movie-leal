@@ -10,23 +10,23 @@ class RecommendedResults {
   String? overview;
   double? popularity;
   String? posterPath;
-  dynamic  voteAverage;
+  dynamic voteAverage;
   int? voteCount;
 
   RecommendedResults(
       {this.backdropPath,
-        this.firstAirDate,
-        this.genreIds,
-        this.id,
-        this.name,
-        this.originCountry,
-        this.originalLanguage,
-        this.originalName,
-        this.overview,
-        this.popularity,
-        this.posterPath,
-        this.voteAverage,
-        this.voteCount});
+      this.firstAirDate,
+      this.genreIds,
+      this.id,
+      this.name,
+      this.originCountry,
+      this.originalLanguage,
+      this.originalName,
+      this.overview,
+      this.popularity,
+      this.posterPath,
+      this.voteAverage,
+      this.voteCount});
 
   RecommendedResults.fromJson(Map<String, dynamic> json) {
     backdropPath = json['backdrop_path'];

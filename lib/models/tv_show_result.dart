@@ -15,18 +15,18 @@ class Results {
 
   Results(
       {this.backdropPath,
-        this.firstAirDate,
-        this.genreIds,
-        this.id,
-        this.name,
-        this.originCountry,
-        this.originalLanguage,
-        this.originalName,
-        this.overview,
-        this.popularity,
-        this.posterPath,
-        this.voteAverage,
-        this.voteCount});
+      this.firstAirDate,
+      this.genreIds,
+      this.id,
+      this.name,
+      this.originCountry,
+      this.originalLanguage,
+      this.originalName,
+      this.overview,
+      this.popularity,
+      this.posterPath,
+      this.voteAverage,
+      this.voteCount});
 
   Results.fromJson(Map<String, dynamic> json) {
     backdropPath = json['backdrop_path'];

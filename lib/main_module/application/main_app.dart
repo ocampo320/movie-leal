@@ -14,15 +14,11 @@ class MercaApp extends StatelessWidget {
 MaterialApp createApp() {
   return MaterialApp(
     debugShowCheckedModeBanner: false,
-    localizationsDelegates: const [
-     
-    ],
+    localizationsDelegates: const [],
     supportedLocales: const [
       Locale('es'),
     ],
     title: 'Move app',
-  
-    home:  WelcomeScreen(),
-  
+    home: WelcomeScreen(),
   );
 }

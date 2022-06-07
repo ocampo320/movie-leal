@@ -1,24 +1,22 @@
 import 'dart:convert';
 
-import '../models/move.dart';
 import 'package:http/http.dart' as http;
 
-class MovieService{
-  static Future<List<Movie>> getAllMovies() async {
+import '../models/move.dart';
 
-    List<Movie> lista=[];
+class MovieService {
+  static Future<List<Movie>> getAllMovies() async {
+    List<Movie> lista = [];
     Uri url =
-    Uri.parse("http://www.omdbapi.com/?s=Batman&page=2&apikey=564727fa");
+        Uri.parse("http://www.omdbapi.com/?s=Batman&page=2&apikey=564727fa");
     final response = await http.get(url);
-    if(response.statusCode == 200) {
+    if (response.statusCode == 200) {
       final result = jsonDecode(response.body);
       List list = result["Search"];
       print(list.toString());
 
       list.map((movie) => Movie.fromJson(movie)).toList().forEach((element) {
-
         lista.add(element);
-
       });
     } else {
       throw Exception("Failed to load movies!");

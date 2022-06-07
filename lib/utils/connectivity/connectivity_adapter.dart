@@ -5,7 +5,6 @@ import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:http/http.dart' as http;
 import 'package:injectable/injectable.dart';
 
-
 import '../../app/settings/application.dart';
 import 'connectivity.dart';
 

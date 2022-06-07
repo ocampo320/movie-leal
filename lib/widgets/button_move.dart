@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 
-class ButtonLogin extends StatelessWidget {
-  const ButtonLogin(
+class ButtonMove extends StatelessWidget {
+  const ButtonMove(
       {Key? key,
       required this.color,
       required this.title,
-      required this.onTap, required this.width, required this.height, required this.fontSize})
+      required this.onTap,
+      required this.width,
+      required this.height,
+      required this.fontSize})
       : super(key: key);
   final Color color;
   final String title;
@@ -28,8 +31,10 @@ class ButtonLogin extends StatelessWidget {
         child: Center(
             child: Text(
           title,
-          style:  TextStyle(
-              fontWeight: FontWeight.w500, fontSize: fontSize, fontFamily: 'Gilroy'),
+          style: TextStyle(
+              fontWeight: FontWeight.w500,
+              fontSize: fontSize,
+              fontFamily: 'Gilroy'),
         )),
       ),
     );

@@ -8,7 +8,6 @@ import '../models/recommended.dart';
 
 class TvShowServices {
   static Future<TvShow> getTvShowPopular() async {
-
     Uri url = Uri.parse(
         '${EndpointsMove.baseUrl}/tv/popular?api_key=${EndpointsMove.apiKey}&language=en-US&page=1');
     final response = await http.get(url);
@@ -24,7 +23,6 @@ class TvShowServices {
   }
 
   static Future<Recommended> getTvShowRecommended() async {
-
     Uri url = Uri.parse(
         '${EndpointsMove.baseUrl}/tv/top_rated?api_key=${EndpointsMove.apiKey}&language=en-US&page=1');
     final response = await http.get(url);

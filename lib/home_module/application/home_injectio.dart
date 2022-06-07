@@ -4,8 +4,6 @@ import 'package:provider/provider.dart';
 import '../application/widgets/t.dart';
 import '../infraestructure/home_provider.dart';
 
-
-
 class HomeInjection {
   HomeInjection._();
 

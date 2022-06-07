@@ -2,11 +2,12 @@ import 'package:move_app/models/tv_show_result.dart';
 
 class TvShow {
   int? page;
-  List<Results> ? results;
+  List<Results>? results;
   int? totalPages;
   int? totalResults;
 
-  TvShow({this.page, required this.results, this.totalPages, this.totalResults});
+  TvShow(
+      {this.page, required this.results, this.totalPages, this.totalResults});
 
   TvShow.fromJson(Map<String, dynamic> json) {
     page = json['page'];

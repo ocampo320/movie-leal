@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
-import 'package:move_app/utils/colors.dart';
-import 'package:move_app/main_module/welcome_module/application/widgets/button_login.dart';
 import 'package:move_app/main_module/welcome_module/infraestructure/welcome_provider.dart';
+import 'package:move_app/utils/colors.dart';
+import 'package:move_app/widgets/button_move.dart';
 import 'package:provider/provider.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -38,21 +38,19 @@ class WelcomeScreen extends StatelessWidget {
               ),
               Column(
                 children: [
-                  ButtonLogin(
-                    fontSize:20,
+                  ButtonMove(
+                    fontSize: 20,
                     height: 45,
                     width: 180,
                     title: "Sign up",
                     color: MoveColor.yellow,
-                    onTap: () {
-
-                    },
+                    onTap: () {},
                   ),
                   const SizedBox(
                     height: 20,
                   ),
-                  ButtonLogin(
-                    fontSize:20,
+                  ButtonMove(
+                    fontSize: 20,
                     height: 45,
                     width: 180,
                     title: "Log in",

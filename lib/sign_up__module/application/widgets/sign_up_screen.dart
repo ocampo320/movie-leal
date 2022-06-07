@@ -1,11 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:move_app/sign_up__module/application/widgets/text_input.dart';
+import 'package:move_app/sign_up__module/infraestructure/auth_input_controller.dart';
 import 'package:move_app/utils/colors.dart';
-import 'package:move_app/main_module/welcome_module/application/widgets/button_login.dart';
+import 'package:move_app/widgets/button_move.dart';
 import 'package:provider/provider.dart';
 
-import '../../../services/tv_show_services.dart';
+import '../../../services/auth_services.dart';
 import '../../infraestructure/sign_up_provider.dart';
 
 class SignUpScreen extends StatelessWidget {
@@ -47,41 +48,43 @@ class SignUpScreen extends StatelessWidget {
                     color: Colors.black.withOpacity(0.5),
                     borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(20),
-                topRight: Radius.circular(20),
-              ),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Column(
-                children: [
+                      topRight: Radius.circular(20),
+                    ),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Column(
+                      children: [
                         const SizedBox(
                           height: 40,
                         ),
                         TexInput(
                           label: "Name",
-                          textEditingController: t,
+                          textEditingController: AuthInputController.user,
                         ),
                         const SizedBox(
                           height: 20,
                         ),
                         TexInput(
                           label: "Password",
-                          textEditingController: t,
+                          textEditingController: AuthInputController.password,
                         ),
                         const SizedBox(
                           height: 70,
                         ),
-                        ButtonLogin(
-                          fontSize:20,
+                        ButtonMove(
+                          fontSize: 20,
                           height: 45,
                           width: 180,
                           title: "Log in",
                           color: MoveColor.white,
                           onTap: () {
-
-                            Navigator.of(context)
-                                .pushNamedAndRemoveUntil('/home', (route) => false);
-
+                            AuthServices.login().then((value) {
+                              if (value) {
+                                Navigator.of(context).pushNamedAndRemoveUntil(
+                                    '/home', (route) => false);
+                              }
+                            });
                           },
                         ),
                       ],
