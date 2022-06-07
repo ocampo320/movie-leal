@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:move_app/welcome_module/application/welcome_screen.dart';
+import 'package:move_app/main_module/welcome_module/application/welcome_screen.dart';
 
 class MercaApp extends StatelessWidget {
   const MercaApp({Key? key}) : super(key: key);

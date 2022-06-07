@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:move_app/home_module/application/widgets/fovorite_carousel.dart';
+import 'package:move_app/home_module/application/widgets/recommended_list.dart';
 import 'package:move_app/utils/colors.dart';
+
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -55,7 +57,15 @@ class HomeScreen extends StatelessWidget {
            Padding(
             padding: const EdgeInsets.only(top: 460.0),
             child: Divider(color: MoveColor.grey,endIndent: 20,indent: 20,),
-          )
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 450),
+            child: Container(
+
+                color: Colors.black,
+                child: const RecommendedList()),
+          ),
+
         ],
       ),
     );

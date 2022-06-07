@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:move_app/sign_up__module/application/widgets/sign_up_screen.dart';
 import 'package:move_app/utils/colors.dart';
-import 'package:move_app/welcome_module/application/welcome_screen.dart';
+import 'package:move_app/main_module/welcome_module/application/welcome_screen.dart';
 
 import 'home_module/application/home_screen.dart';
 
@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Movie app',
       theme: ThemeData(
+
         primarySwatch: Colors.blue,
         inputDecorationTheme: const InputDecorationTheme(
           labelStyle: TextStyle(color: Colors.black),
@@ -31,8 +32,7 @@ class MyApp extends StatelessWidget {
               body: SignUpScreen(),
             ),
         '/home': (BuildContext context) =>  Scaffold(
-              body: const HomeScreen(),appBar: AppBar(centerTitle: true,actions: [IconButton(onPressed: (){}, icon:  Icon(Icons.settings,color: MoveColor.grey,), )],   backgroundColor: Colors.black,  title: Text('Home', ),),
-            ),
+              body: const HomeScreen(),appBar: AppBar(centerTitle: true,actions: [IconButton(onPressed: (){}, icon:  Icon(Icons.settings,color: MoveColor.grey,), )],   backgroundColor: Colors.black,  title: Text('Home', ),)),
       },
     );
   }

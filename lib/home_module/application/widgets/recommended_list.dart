@@ -1,28 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:move_app/home_module/application/widgets/card_recommended.dart';
 import 'package:move_app/models/tv_show.dart';
-import 'package:move_app/services/movie_services.dart';
 import 'package:move_app/services/tv_show_services.dart';
 
-import '../../../models/move.dart';
-import '../../../models/tv_show_result.dart';
-import '../../../utils/colors.dart';
-import 'card_popular.dart';
 
-class FavoriteCarousel extends StatelessWidget {
-  const FavoriteCarousel({Key? key}) : super(key: key);
+import '../../../models/recommended.dart';
+import '../../../utils/colors.dart';
+
+
+class RecommendedList extends StatelessWidget {
+  const RecommendedList({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-      future: TvShowServices.getTvShowPopular(),
+      future: TvShowServices.getTvShowRecommended(),
       builder: (
         BuildContext context,
-        AsyncSnapshot<TvShow> snapshot,
+        AsyncSnapshot<Recommended> snapshot,
       ) {
         if (snapshot.hasData) {
           List<Widget> childrens = constructChildren(snapshot.data!);
           return ListView.builder(
-            scrollDirection: Axis.horizontal,
+            scrollDirection: Axis.vertical,
             itemCount: snapshot.data?.results?.length,
             itemBuilder: (BuildContext context, int i) {
               return childrens[i];
@@ -49,11 +49,12 @@ class FavoriteCarousel extends StatelessWidget {
     );
   }
 
-  List<Widget> constructChildren(TvShow  list) {
+  List<Widget> constructChildren(Recommended  list) {
     List<Widget> markets = [];
 
     for (int i = 0; i < list.results!.length; i++) {
-      markets.add(CardPopular(
+      markets.add(CardRecommended(
+        vote:list.results![i].voteAverage! ,
         title: list.results![i].name!,
         image:'https://image.tmdb.org/t/p/w500${list.results![i].posterPath}' ,
 

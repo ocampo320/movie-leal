@@ -4,7 +4,7 @@
 import 'package:flutter/material.dart';
 
 import '../sign_up__module/application/widgets/sign_up_screen.dart';
-import '../welcome_module/application/welcome_screen.dart';
+import '../main_module/welcome_module/application/welcome_screen.dart';
 
 class PocketWalletApp extends StatelessWidget {
 
